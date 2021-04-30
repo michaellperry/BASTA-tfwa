@@ -42,10 +42,6 @@ namespace TenantFile.Api
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      FirebaseApp.Create(new AppOptions()
-      {
-        Credential = Google.Apis.Auth.OAuth2.GoogleCredential.GetApplicationDefault()
-      });
       services.AddScoped<TenantFileContext>();
 
       // If we are in development, we want to use our dockerized postgres which has known parameters.
